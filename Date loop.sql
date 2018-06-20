@@ -11,7 +11,7 @@ AS (
 	
 	UNION ALL
 	
-	SELECT DDate + 1 -- recursive member, increase date by one
+	SELECT DATEADD(day,1,DDate) -- recursive member, increase date by one
 	FROM DateRange
 	/* SET THE END DATE AS JAN 01 (Year + 2) */
 	WHERE DDate < DATEADD(YY, DATEDIFF(YY, 0, GETDATE()) + 2, 0) -- terminator
